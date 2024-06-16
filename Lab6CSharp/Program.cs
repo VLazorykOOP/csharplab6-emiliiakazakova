@@ -1,58 +1,35 @@
-﻿// See https://aka.ms/new-console-template for more information
-/// <summary>
-///  Top-level statements 
-///  Код програми (оператори)  вищого рівня
-/// </summary>
-///
-Console.WriteLine("Lab6 C# ");
-AnyFunc();
-
-/// <summary>
-/// 
-///  Top-level statements must precede namespace and type declarations.
-/// At the top-level methods/functions can be defined and used
-/// На верхньому рівні можна визначати та використовувати методи/функції
-/// </summary>
-void AnyFunc()
+﻿class Program
 {
-    Console.WriteLine(" Some function in top-level");
-}
-Console.WriteLine("Problems 1 ");
-AnyFunc();
-//  приклад класів
-UserClass cl = new UserClass();
-cl.Name = " UserClass top-level ";
-User.UserClass cl2 = new();
-cl2.Name = " UserClass namespace User ";
-
-
-
-
-/// <summary>
-/// 
-/// Top-level statements must precede namespace and type declarations.
-/// Оператори верхнього рівня мають передувати оголошенням простору імен і типу.
-/// Створення класу(ів) або оголошенням простору імен є закіченням  іструкцій верхнього рівня
-/// 
-/// </summary>
-
-namespace User
-{
-    class UserClass
+    static void Main()
     {
-        public string Name { get; set; }
-        public UserClass()
-        {
-            Name = "NoName";
-        }
-        UserClass(string n)
-        {
-            Name = n;
-        }
-    }
+        // Приклад використання класів і методів
+        Mammal lion = new Mammal { Name = "Lion" };
+        lion.DisplayUserInfo();
+        lion.GiveBirth();
+        lion.UseDotNetFeature();
 
-}
-class UserClass
-{
-    public string Name { get; set; }
+        Bird eagle = new Bird { Name = "Eagle" };
+        eagle.DisplayUserInfo();
+        eagle.Fly();
+        eagle.UseDotNetFeature();
+
+        DotNetUser user = new DotNetUser();
+        user.DisplayUserInfo();
+        user.UseDotNetFeature();
+
+        Console.WriteLine("\n\nTask2\n\n");
+
+        // Приклад використання класів і методів
+        Car car = new Car { Brand = "Toyota", Number = "AB1234", Speed = 120, CargoCapacity = 500 };
+        car.DisplayInfo();
+        car.UseDotNetFeature();
+
+        Motorcycle motorcycle = new Motorcycle { Brand = "Harley", Number = "XY5678", Speed = 80, HasSidecar = true };
+        motorcycle.DisplayInfo();
+        motorcycle.UseDotNetFeature();
+
+        Truck truck = new Truck { Brand = "Volvo", Number = "CD9012", Speed = 90, HasTrailer = true };
+        truck.DisplayInfo();
+        truck.UseDotNetFeature();
+    }
 }
